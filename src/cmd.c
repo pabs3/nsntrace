@@ -73,6 +73,7 @@ nsntrace_cmd_run(char *format, ...)
 
 		va_start(arg, format);
 		vsnprintf(cmd, 1024, format, arg);
+		va_end(arg);
 		_nsntrace_cmd_parse(cmd, args);
 		return execvp(args[0], args);
 	}
